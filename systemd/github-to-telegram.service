@@ -1,0 +1,17 @@
+[Unit]
+Description=GitHub to Telegram Webhook Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/github-to-telegram
+EnvironmentFile=/root/github-to-telegram/.env
+ExecStart=/root/github-to-telegram/venv/bin/python /root/github-to-telegram/run.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
