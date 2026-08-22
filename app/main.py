@@ -49,7 +49,7 @@ async def lifespan(app: FastAPI):
         await sender.stop()
 
 
-app = FastAPI(title="GitHub to Telegram", version="2026.1.0", lifespan=lifespan)
+app = FastAPI(title="GitHub to Telegram", version="2026.1.1", lifespan=lifespan)
 
 
 def verify_signature(body: bytes, signature: str | None) -> bool:

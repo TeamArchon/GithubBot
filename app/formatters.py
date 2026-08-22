@@ -5,11 +5,12 @@ from typing import Any
 
 
 def esc(value: Any) -> str:
-    return html.escape(str(value or ""), quote=True)
+    return html.escape(str(value) if value is not None else "", quote=True)
 
 
 def cut(value: Any, limit: int = 180) -> str:
-    text = str(value or "").strip()
+    text = str(value) if value is not None else ""
+    text = text.strip()
     if len(text) <= limit:
         return text
     return text[: limit - 1].rstrip() + "…"
