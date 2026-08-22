@@ -15,6 +15,10 @@ A production-oriented Python rewrite of the `agam778/github-to-telegram` project
 - 🔄 GitHub delivery de-duplication
 - 🔘 Inline buttons for repository/commit/issue/PR/release/workflow
 
+## Configuration
+
+Copy `.env.example` to `.env` and replace every placeholder with your real values. Never commit `.env` to GitHub.
+
 ## Install
 
 ```bash
@@ -37,7 +41,7 @@ Create a bot with `@BotFather`. Put its token in `TELEGRAM_BOT_TOKEN`.
 Pyrogram also needs your Telegram `API_ID` and `API_HASH` from `my.telegram.org`.
 Add the bot to the target group/channel and give it permission to post.
 
-`TELEGRAM_CHAT_ID` can be a group/channel ID such as `-1001234567890`.
+`TELEGRAM_CHAT_ID` can be a group/channel ID such as `-1001234567890`. The bot must be a member/admin with permission to send messages.
 
 ## Test locally on VPS
 
@@ -55,7 +59,7 @@ curl http://127.0.0.1:5000/health
 Expected:
 
 ```json
-{"status":"ok","service":"github-to-telegram","version":"2026.1.0"}
+{"status":"ok","service":"github-to-telegram","version":"2026.1.1"}
 ```
 
 ## GitHub Webhook
